@@ -34,8 +34,8 @@
         {
             "atomType": "Extrude",
             "name": "Extrude",
-            "x": 0.2834728033472803,
-            "y": 0.22843822843822842,
+            "x": 0.28085774058577406,
+            "y": 0.23076923076923078,
             "uniqueID": 1745193068453,
             "ioValues": [
                 {
@@ -62,7 +62,7 @@
                 },
                 {
                     "name": "diameter",
-                    "ioValue": 80
+                    "ioValue": 60
                 }
             ],
             "description": "Creates a new regular polygon. Corners are on the diameter."
@@ -70,8 +70,8 @@
         {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.28085774058577406,
-            "y": 0.5710955710955711,
+            "x": 0.24633891213389122,
+            "y": 0.5897435897435898,
             "uniqueID": 1745193232501,
             "ioValues": [
                 {
@@ -80,7 +80,7 @@
                 },
                 {
                     "name": "xDist",
-                    "ioValue": 0
+                    "ioValue": 25
                 },
                 {
                     "name": "yDist",
@@ -92,6 +92,42 @@
                 }
             ],
             "description": "Moves a shape laterally in X, Y, Z."
+        },
+        {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.35198744769874474,
+            "y": 0.6013986013986014,
+            "uniqueID": 1745193304517,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": 1745193232501
+                },
+                {
+                    "name": "height",
+                    "ioValue": 75
+                }
+            ],
+            "description": "Extrudes a 2D shape. Input can be negitive. "
+        },
+        {
+            "atomType": "Intersection",
+            "name": "Intersection",
+            "x": 0.4293933054393305,
+            "y": 0.35431235431235436,
+            "uniqueID": 1745193553661,
+            "ioValues": [
+                {
+                    "name": "geometry1",
+                    "ioValue": 1745193068453
+                },
+                {
+                    "name": "geometry2",
+                    "ioValue": ""
+                }
+            ],
+            "description": "The space shared by two shapes."
         }
     ],
     "allConnectors": [
@@ -104,10 +140,24 @@
         },
         {
             "ap1Name": "geometry",
+            "ap2Name": "geometry1",
+            "ap2Primary": false,
+            "ap1ID": 1745193068453,
+            "ap2ID": 1745193553661
+        },
+        {
+            "ap1Name": "geometry",
             "ap2Name": "geometry",
             "ap2Primary": true,
             "ap1ID": 1745193154600,
             "ap2ID": 1745193232501
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 1745193232501,
+            "ap2ID": 1745193304517
         }
     ],
     "unitsKey": "Inches",
